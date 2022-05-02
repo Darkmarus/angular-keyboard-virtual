@@ -1,0 +1,15 @@
+<div class="keyboard">
+  <div class="keyboard--row">
+    <label class="keyboard--label">{{ message }}</label>
+  </div>
+  <div class="keyboard--row" *ngFor="let rowKeys of alphanumeric; index as r">
+    <button
+      class="keyboard--key"
+      *ngFor="let key of rowKeys; index as k"
+      [ngClass]="'keyboard--key__size-' + key.space"
+      (click)="onClickKey(key.value)"
+    >
+      {{ key.label }}
+    </button>
+  </div>
+</div>
